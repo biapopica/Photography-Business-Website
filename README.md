@@ -4,6 +4,8 @@
 
 <p>Delivered a production-ready presentation website for a photographer using a lightweight, custom CMS. The project is focused on front-end development with an emphasis on clean UI/UX design, mobile responsiveness, and SEO optimization. The back-end allows the client to easily update the photo gallery by managing images locally and deploying changes via Git.</p>
 
+[Website link](https://paulclapa.com/)
+
 <h2>Design and Structure</h2>
 
 <p>Landing page</p>
