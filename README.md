@@ -1,54 +1,33 @@
-# Astro Starter Kit: Basics
+<h1>Photography Business Website with Custom CMS</h1>
 
-```sh
-npm create astro@latest -- --template basics
-```
+<h2>Description</h2>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+<p>Delivered a production-ready presentation website for a photographer using a lightweight, custom CMS. The project is focused on front-end development with an emphasis on clean UI/UX design, mobile responsiveness, and SEO optimization. The back-end allows the client to easily update the photo gallery by managing images locally and deploying changes via Git.</p>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+<h2>Design and Structure</h2>
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+<p>Landing page</p>
 
-## 🚀 Project Structure
+![Screenshot 2024-11-01 224914](https://github.com/user-attachments/assets/8aa3a8a4-9efe-47f0-979f-1d0fcc4f21b1)
 
-Inside of your Astro project, you'll see the following folders and files:
+<p>Mobile view</p>
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+![Screenshot 2024-11-01 225418](https://github.com/user-attachments/assets/3e77c4dc-128d-4271-9ada-81cdd71258fa)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+<p>Mobile view menu</p>
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+![Screenshot 2024-11-01 225429](https://github.com/user-attachments/assets/b32ef61f-0bd4-4f5d-ba92-51b8aba4d374)
 
-Any static assets, like images, can be placed in the `public/` directory.
+<p>Photo gallery with dynamic photo categories</p>
 
-## 🧞 Commands
+![Screenshot 2024-11-01 224950](https://github.com/user-attachments/assets/d54a548f-80ec-43e3-a8bd-bf6d74be0469)
 
-All commands are run from the root of the project, from a terminal:
+<p>Service pages</p>
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+![Screenshot 2024-11-01 225041](https://github.com/user-attachments/assets/8ab8ec34-def5-4428-baee-4d383067e336)
 
-## 👀 Want to learn more?
+![Screenshot 2024-11-01 225006](https://github.com/user-attachments/assets/58fbf297-3944-4fbb-ab64-9bea573fcfc7)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+<p>About me page</p>
+
+![Screenshot 2024-11-01 225056](https://github.com/user-attachments/assets/a2daddfd-0ef6-47c4-b6f3-5de1eb4fcce5)
