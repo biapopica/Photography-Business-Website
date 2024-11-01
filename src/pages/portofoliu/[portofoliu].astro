@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Gallery from '../../components/Gallery.astro'
+import Header from '../../components/Header.astro'
+import { getPages, getFiles } from '../../utils/fileUtils'
+
+export async function getStaticPaths() {
+	const relativePath = './src/poze-site/portofoliu'
+	const directories = await getPages(relativePath)
+	const paths = directories.map((directory) => ({
+		params: { portofoliu: directory },
+		props: { name: directory }
+	}))
+	return paths
+}
+
+const { portofoliu } = Astro.params
+
+const relativePagesPath = './src/poze-site/portofoliu'
+
+const directories = await getPages(relativePagesPath)
+
+const links = directories.map((dir) => {
+	return {
+		url: '/portofoliu/' + dir,
+		name: dir
+	}
+})
+
+const allImgs = await Astro.glob('../../poze-site/portofoliu/**/*')
+// default: { src: '/_astro/numePoza.hash.jpg
+
+const relativeFilesPath = './src/poze-site/portofoliu/' + portofoliu
+
+const files = await getFiles(relativeFilesPath)
+
+const formatedFiles = files.map((file) => {
+	return file.split('.')[0] // zapada_frumoasa.jpg => zapada_frumoasa
+})
+
+const imgs = allImgs.filter((img) => {
+	for (let i = 0; i < formatedFiles.length; i++) {
+		if (img.default.src.includes(formatedFiles[i])) {
+			return img
+		}
+	}
+})
+---
+
+<Layout title={`Portofoliu ${portofoliu} | Paul Clapa`}>
+	<Header />
+	<Gallery allImgs={imgs} links={links} title={portofoliu} />
+</Layout>

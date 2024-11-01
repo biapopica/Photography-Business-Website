@@ -1,0 +1,23 @@
+---
+import LandingSlider from '../components/LandingSlider'
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Socials from '../components/Socials.astro'
+---
+
+<Layout title="Acasa | Paul Clapa">
+	<Header />
+	<section class="full-height fixed inset-0 isolate w-full overflow-hidden">
+		<LandingSlider client:only />
+		<div class="fixed inset-0 min-h-screen w-full"></div>
+		<a
+			data-blobity-focus
+			class="fixed left-0 right-0 top-[45vh] z-10 mx-auto block w-min max-w-sm p-1 text-center text-xl tracking-widest sm:w-auto sm:text-2xl"
+			href="/portofoliu"
+			><h1>
+				Paul Clapa <span class="hidden sm:inline">|</span> Photography
+			</h1>
+		</a>
+		<Socials display="fixed" />
+	</section>
+</Layout>

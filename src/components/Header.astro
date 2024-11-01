@@ -1,0 +1,28 @@
+---
+import Logo from '../assets/logo-simplify.png'
+import { Image } from 'astro:assets'
+import Link from '../components/Link.astro'
+import MobileHeader from '../components/MobileHeader'
+---
+
+<header
+	class="relative isolate z-10 flex w-full items-center justify-between bg-transparent px-6 py-8 md:px-8"
+>
+	<a href="/"><Image src={Logo} alt="Wolf Logo" class="w-[50px] sm:w-[65px]" /></a>
+	<nav class="hidden md:block">
+		<ul class="flex items-center justify-start gap-10">
+			<Link dim="95px" text="portofoliu" location="/portofoliu" />
+			<Link dim="75px" text="tablouri" location="/tablouri" />
+			<Link dim="75px" text="albume" location="/albume" />
+			<Link dim="125px" text="despre mine" location="/despre" />
+		</ul>
+	</nav>
+	<div class="flex md:hidden">
+		<MobileHeader client:visible>
+			<Link text="portofoliu" location="/portofoliu" />
+			<Link text="tablouri" location="/tablouri" />
+			<Link text="albume" location="/albume" />
+			<Link text="despre mine" location="/despre" />
+		</MobileHeader>
+	</div>
+</header>

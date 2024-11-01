@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets'
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import ReadMore from '../components/ReadMore.jsx'
+import AboutBlob from '../components/AboutBlob.astro'
+import ServiciiLink from '../components/ServiciiLink.astro'
+import Servicii from '../components/Servicii.astro'
+import Link from '../components/Link.astro'
+import Socials from '../components/Socials.astro'
+---
+
+<style>
+	.line {
+		background-image: radial-gradient(circle, rgb(245 237 223) 28%, rgb(38 38 38));
+	}
+	.dimensiune {
+		min-height: calc(80vh - 134.58px);
+	}
+	.in-need-of-blurry::after {
+		content: '';
+		position: absolute;
+		@apply left-1/2 top-1/2 -z-10 h-20 w-20 -translate-x-1/2 -translate-y-1/2 bg-cream opacity-20  blur-[30px] md:h-24 md:w-24 2xl:h-32 2xl:w-32 2xl:blur-[45px];
+	}
+	@media (min-width: 1024px) {
+		.in-need-of-bg {
+			background-image: url('../assets/description-background.webp');
+		}
+	}
+</style>
+
+<Layout title="Despre | Paul Clapa">
+	<main>
+		<section class="in-need-of-bg relative min-h-[80vh] w-full bg-cover bg-fixed bg-bottom">
+			<Header />
+			<div class="absolute inset-0 z-[5] bg-neutral-800 bg-opacity-80"></div>
+			<div
+				class="dimensiune z-10 flex w-full flex-col items-center gap-5 pt-[100px] lg:flex-row lg:justify-center lg:px-8 lg:pt-0"
+			>
+				<h1 class="z-10 text-center text-5xl font-light xs:text-6xl sm:hidden">
+					DESPRE
+					<br />
+					<span class="whitespace-nowrap text-3xl font-semibold xs:text-4xl">Paul Clapa</span>
+				</h1>
+				<ReadMore client:only>
+					<AboutBlob />
+				</ReadMore>
+			</div>
+		</section>
+		<div class="line z-10 hidden h-[1.2px] w-full lg:block"></div>
+		<section
+			class="my-[8vh] flex flex-col items-center justify-center justify-items-center gap-24 px-[10%] 2xl:px-[8%]"
+		>
+			<h2 class="self-start text-4xl font-extralight sm:text-5xl">Cu ce pot sa te ajut?</h2>
+			<div
+				class="grid items-stretch justify-center justify-items-center gap-16 pb-5 md:grid-cols-2 lg:gap-20 2xl:grid-cols-4 2xl:gap-24"
+			>
+				<ServiciiLink
+					route="/tablouri"
+					title="Tablouri Foto"
+					text="Fotografii asamblate în tablouri tip canvas sau înrămate."
+				/>
+				<ServiciiLink
+					route="/albume"
+					title="Albume Foto"
+					text="Albume foto sau fotocărți cu portrete de familie sau de evenimente."
+				/>
+				<Servicii
+					title="Ședințe Foto"
+					text="Proiecte fotografice de peisaj sau sociale care implică deplasări sau călătorii."
+				/>
+				<Servicii
+					title="Portrete"
+					text="Proiecte fotografice pentru portretistică, ședințe foto de familie și ședințe foto cu copii."
+				/>
+			</div>
+		</section>
+		<Socials display="block" padding="p-8" />
+	</main>
+</Layout>

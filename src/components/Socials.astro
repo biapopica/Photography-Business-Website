@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets'
+import facebookIcon from '../assets/facebook.svg'
+import instagramIcon from '../assets/insta.svg'
+import emailIcon from '../assets/email.svg'
+const { display = 'block', padding = 'auto' } = Astro.props
+---
+
+<div
+	class={`${display} ${padding} bottom-8 left-0 right-0 z-10 mx-auto flex items-center md:justify-end justify-center gap-10 sm:left-auto sm:right-6 sm:mx-0 sm:ml-6 md:right-8 md:ml-8`}
+>
+	<a href="https://m.facebook.com/paulclapafotografii/" target="_blank"
+		><Image
+			src={facebookIcon}
+			alt="facebook icon"
+			class="block w-7 transition-all duration-500 hover:scale-125 focus-visible:scale-125"
+		/></a
+	>
+	<a href="https://www.instagram.com/paulclapa_fotograf/" target="_blank"
+		><Image
+			src={instagramIcon}
+			alt="instagram icon"
+			class="block w-7 transition-all duration-500 hover:scale-125 focus-visible:scale-125"
+		/></a
+	>
+	<a href="mailto:paulclapa12@gmail.com" target="_blank"
+		><Image
+			src={emailIcon}
+			alt="email icon"
+			class="block w-7 transition-all duration-500 hover:scale-125 focus-visible:scale-125"
+		/>
+	</a>
+</div>

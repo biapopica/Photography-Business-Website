@@ -1,0 +1,30 @@
+---
+import paulClapaPhoto from '../assets/PaulPhoto.jpg'
+import { Image } from 'astro:assets'
+---
+
+<style>
+	.blob {
+		border-radius: 20% 80% 17% 83% / 45% 46% 54% 55%;
+		opacity: 0.7;
+	}
+</style>
+
+<div class="relative flex items-center justify-center">
+	<Image
+		src={paulClapaPhoto}
+		alt="Paul Clapa"
+		loading="eager"
+		quality="mid"
+		class="blob z-10 my-8 w-[80%] max-w-[450px] shadow-2xl shadow-neutral-950 lg:max-w-[550px]"
+	/>
+	<h1
+		class="absolute left-[30%] top-0 z-10 hidden font-MontSerrat text-6xl font-light sm:block lg:top-[2%] lg:text-5xl xl:left-[30%] xl:text-6xl"
+	>
+		DESPRE
+		<br />
+		<span class="ml-[5rem] whitespace-nowrap text-5xl font-semibold lg:text-4xl xl:text-5xl"
+			>Paul Clapa</span
+		>
+	</h1>
+</div>

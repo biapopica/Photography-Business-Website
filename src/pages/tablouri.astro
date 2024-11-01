@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import { Image } from 'astro:assets'
+import foto from '../assets/25Plecăciune800x1000.jpg'
+import AbsoluteOverPhoto from '../components/AbsoluteOverPhoto.astro'
+import PortofolioSlider from '../components/PortofolioSlider.astro'
+import Socials from '../components/Socials.astro'
+---
+
+<style>
+	.dimensiune {
+		min-height: calc(80vh - 134.58px);
+	}
+	.line {
+		background-image: radial-gradient(circle, rgb(245 237 223) 28%, rgb(38 38 38));
+	}
+</style>
+
+<Layout title="Tablouri | Paul Clapa">
+	<Header />
+	<section
+		class="dimensiune mx-auto flex w-[90%] flex-col-reverse items-center justify-center gap-10 py-10 md:flex-row md:justify-between lg:w-[80%] lg:py-16"
+	>
+		<p class="animate-showUp md:w-[50%] 2xl:text-lg">
+			<span class="font-semibold">Natura</span> adusă în locuințe personale, spații comerciale și
+			birouri prin intermediul tablourilor de tip <span class="font-semibold">canvas</span>.
+			Fotografiile realizate de mine, care surprind peisaje din ceea ce cred eu a fi cea mai
+			frumoasă țară europeană, România, sau propriile tale fotografii, pot lua forma unor tablouri
+			care să aducă o <span class="font-semibold">pată de culoare</span> oricărei încăperi. <br />
+			 Mai multe informații găsești pe <a
+				class="font-semibold underline underline-offset-8 transition-all duration-500 hover:bg-neutral-700 focus-visible:bg-neutral-700"
+				href="https://www.facebook.com/paulclapafotografii/"
+			>
+				pagina mea de Facebook</a
+			>.
+		</p>
+		<AbsoluteOverPhoto foto={foto} title="Tablouri" />
+	</section>
+	<div class="line my-12 h-[1.2px] w-full rounded-lg"></div>
+	<section
+		class="md: relative isolate mx-auto my-14 mt-12 flex w-[90%] flex-col items-center justify-center gap-10 md:mb-20 lg:w-[80%] lg:gap-14"
+	>
+		<h2 class="self-start text-4xl font-extralight sm:text-5xl">Exemple de tablouri</h2>
+		<PortofolioSlider src="../poze-site/tablouri/*" />
+	</section>
+	<Socials display="block" padding="p-8" />
+</Layout>

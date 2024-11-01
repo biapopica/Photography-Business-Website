@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets'
+const { src = '' } = Astro.props
+const photos = await Astro.glob('../poze-site/tablouri/*')
+const albumPhotos = await Astro.glob('../poze-site/albume/*')
+---
+
+{
+	src === '../poze-site/albume/*' ? (
+		<div class="swiper  w-full max-w-4xl rounded-lg shadow-2xl shadow-neutral-950">
+			<>
+				<div class="swiper-wrapper h-full w-full rounded-lg">
+					{albumPhotos.map((photo) => (
+						<div class="swiper-slide h-full w-full  rounded-lg">
+							<Image
+								src={photo.default}
+								class="h-full w-full object-cover object-top"
+								alt="Poza Album"
+							/>
+						</div>
+					))}
+				</div>
+				<div class="swiper-pagination bg-cream" />
+			</>
+		</div>
+	) : (
+		<div class="swiper w-full max-w-4xl rounded-lg shadow-2xl shadow-neutral-950">
+			<>
+				<div class="swiper-wrapper h-full w-full rounded-lg">
+					{photos.map((photo) => (
+						<div class="swiper-slide h-full w-full  rounded-lg">
+							<Image
+								src={photo.default}
+								class="h-full w-full object-cover object-top"
+								alt="Tablou"
+							/>
+						</div>
+					))}
+				</div>
+				<div class="swiper-pagination bg-cream" />
+			</>
+		</div>
+	)
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script is:inline>
+	new Swiper('.swiper', {
+		autoHeight: true,
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'progressbar'
+		}
+	})
+</script>
+
+<style is:global>
+	.swiper-pagination-progressbar-fill {
+		background-color: #f5eddf !important;
+	}
+</style>

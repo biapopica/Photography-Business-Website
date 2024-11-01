@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Header from '../../components/Header.astro'
+import { getPages } from '../../utils/fileUtils'
+import Gallery from '../../components/Gallery.astro'
+
+const relativePath = './src/poze-site/portofoliu'
+
+const directories = await getPages(relativePath)
+
+const links = directories.map((dir) => {
+	return {
+		url: '/portofoliu/' + dir,
+		name: dir
+	}
+})
+
+const allImgs = await Astro.glob('../../poze-site/portofoliu/**/*')
+---
+
+<Layout title="Portofoliu | Paul Clapa">
+	<Header />
+	<Gallery links={links} allImgs={allImgs} title="toate" />
+</Layout>

@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import { Image } from 'astro:assets'
+import AbsoluteOverPhoto from '../components/AbsoluteOverPhoto.astro'
+import ISaidYesPhoto from '../assets/familie_portret.jpg'
+import PortofolioSlider from '../components/PortofolioSlider.astro'
+import ChildPhoto from '../assets/poza2-album.jpg'
+import Socials from '../components/Socials.astro'
+import LayoutBebeSafer from '../layouts/LayoutBebeSafer.astro'
+---
+
+<style>
+	.line {
+		background-image: radial-gradient(circle, rgb(245 237 223) 28%, rgb(38 38 38));
+	}
+</style>
+
+<LayoutBebeSafer title="Albume | Paul Clapa">
+	<Header />
+	<section
+		class="flex flex-col items-center justify-center gap-20 px-7 pt-10 md:pt-16 lg:flex-row lg:items-start lg-xl:items-center xl:pt-20"
+	>
+		<div
+			class="relative w-full max-w-sm shadow-2xl shadow-neutral-950 sm:w-[70%] sm:max-w-lg lg:w-[50%] lg:max-w-md xl:w-[40%] xl:max-w-lg"
+		>
+			<h1
+				class="absolute -top-6 left-1/2 -translate-x-1/2 text-5xl font-medium sm:-left-16 sm:top-3 sm:translate-x-0 sm:text-6xl md:-top-10 md:left-1/2 md:-translate-x-1/2 lg:text-7xl 2xl:left-0 2xl:top-4 2xl:text-8xl"
+			>
+				Albume
+			</h1>
+			<Image src={ISaidYesPhoto} class="w-full rounded border-cream" alt="i said yes photo" />
+			<Image
+				src={ChildPhoto}
+				class="absolute -bottom-[87%] left-[70%] hidden w-full rounded border-cream shadow-2xl shadow-neutral-950 lg:block xl:-bottom-[80%]"
+				alt="i said yes photo"
+			/>
+		</div>
+
+		<p class="max-w-[550px] animate-showUp lg-xl:mb-3 2xl:text-lg">
+			Albumele foto, povestea evenimentului fotografiat, sunt <span class="font-semibold"
+				>pagini minimaliste</span
+			>, organizate într-un aranjament simplu, plăcut la vedere și care <span class="font-semibold"
+				>evidențiază esențialul</span
+			>. Albumul tău va conține doar pozele pe care ți le dorești și va fi realizat cu mare atenție
+			de un <span class="font-semibold">laborator foto profesional</span> din București.
+			<br />
+			<br />
+			 Calitatea albumelor se traduce prin <span class="font-semibold">printurile fidele</span> și <span
+				class="font-semibold">culorile naturale</span
+			>, coperți lucrate manual din <span class="font-semibold">piele naturală</span>, <span
+				class="font-semibold">piele ecologică</span
+			> ori
+			<span class="font-semibold">material textil</span> și nu în ultimul rând, prin folosirea
+			hârtiei profesionale <span class="whitespace-nowrap font-semibold">Fuji Crystal Archive</span>
+			 cu textură elegantă sau <span class="whitespace-nowrap font-semibold">Fuji Lustre-mat</span>.
+		</p>
+	</section>
+	<div class="flex w-full justify-center px-7 py-[80px] lg:p-[5%] xl:p-10">
+		<Image
+			src={ChildPhoto}
+			class="w-full max-w-[360px] rounded border-cream shadow-2xl shadow-neutral-950 sm:w-[50%] lg:w-[30%] lg:max-w-md lg:opacity-0 xl:w-[30%]"
+			alt="child photo"
+		/>
+	</div>
+	<div class="line mb-20 mt-8 h-[1.2px] w-full rounded-lg"></div>
+	<section
+		class="relative isolate mx-auto my-14 flex w-[90%] flex-col items-center justify-center gap-10 md:my-20 lg:w-[80%] lg:gap-14"
+	>
+		<h2 class="self-start text-4xl font-extralight sm:text-5xl">Exemple de pagini ale albumelor</h2>
+		<PortofolioSlider src="../poze-site/albume/*" />
+	</section>
+	<Socials display="block" padding="p-8" />
+</LayoutBebeSafer>

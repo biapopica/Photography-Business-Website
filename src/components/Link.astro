@@ -1,0 +1,12 @@
+---
+const { dim = 'auto', text, location = '/' } = Astro.props
+---
+
+<li>
+	<a
+		style={{ width: dim }}
+		href={location}
+		class="block text-center text-2xl font-medium transition-all duration-500 md:text-lg md:hover:font-extrabold md:focus-visible:font-extrabold"
+		>{text}
+	</a>
+</li>
